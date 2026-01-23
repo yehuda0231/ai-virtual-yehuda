@@ -135,7 +135,7 @@ Pengalaman ini memperkuat pemahaman implementasi AI di dunia nyata.
       return `
 Sertifikasi & prestasi Yehuda Putra Yura antara lain:
 
-🏆 Juara 2 Kompetisi Coding Robotic IoT – Festival Media Remaja GIM (2025)
+🏆 Juara 2 Kompetisi Coding Robotic IoT – Festival Media Remaja GMIM (2025)
 
 📜 Sertifikasi Kompetensi Junior Web Developer – BNSP (2024)  
 📜 Sertifikasi Office Perkantoran – BNSP (2023)  
