@@ -4,8 +4,8 @@ export default function Hero() {
   return (
     <>
       {/* ================= HERO ================= */}
-      <section className="relative min-h-screen pt-28 flex items-center justify-center px-6 text-center bg-black overflow-hidden">
-        
+      <section className="relative min-h-[70vh] pt-10 flex items-start justify-center px-6 text-center bg-black overflow-hidden">
+
         {/* Background Glow */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-24 left-1/2 -translate-x-1/2 h-96 w-96 bg-blue-600/25 blur-[160px]" />
@@ -21,7 +21,7 @@ export default function Hero() {
 
           {/* DESC */}
           <p className="mt-5 text-gray-400 text-lg leading-relaxed">
-            Seorang AI Engineer yang berfokus pada pemrosesan Big Data, analisis
+            Saya Yehuda Yura Seorang AI Engineer yang berfokus pada pemrosesan Big Data, analisis
             data, dan pengembangan sistem cerdas.
           </p>
 
