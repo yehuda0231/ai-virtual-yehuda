@@ -29,3 +29,7 @@ body {
   padding-top: 64px; /* tinggi navbar */
 }
 
+html,
+body {
+  background-color: #000;
+}
