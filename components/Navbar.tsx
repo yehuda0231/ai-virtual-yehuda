@@ -81,7 +81,7 @@ export default function Navbar() {
         onClick={() => setOpen(false)}
         className="py-2 px-3 rounded-lg bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition"
       >
-        AI Virtual
+        AI Asisstant
       </Link>
 
       <Link

@@ -18,12 +18,19 @@ type Message = {
 };
 
 export default function AIAssistant() {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      role: "assistant",
+      content:
+        "Halo 👋 Saya AI Assistant milik Yehuda Yura.\n\nSaya bisa membantu menjelaskan tentang profil, skill, project, sertifikasi, dan pengalaman Yehuda. Silakan pilih menu di bawah atau ketik pertanyaan kamu 😊",
+    },
+  ]);
+
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
-  // AUTO SCROLL CHAT
+  // AUTO SCROLL
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, typing]);
@@ -76,38 +83,36 @@ export default function AIAssistant() {
   }
 
   return (
-    <section className="h-[100svh] w-full flex items-center justify-center bg-black px-3">
-      <div className="w-full max-w-3xl h-full flex flex-col rounded-2xl bg-black/70 border border-white/20 shadow-2xl backdrop-blur">
+    <section className="w-full max-w-xl sm:max-w-2xl">
+      <div className="h-[520px] sm:h-[560px] flex flex-col rounded-2xl bg-black/70 border border-white/15 shadow-2xl backdrop-blur">
 
-       {/* ===== HEADER (STICKY) ===== */}
-<header className="sticky top-0 z-30 px-5 py-4 bg-black/90 backdrop-blur border-b border-white/10">
-  <h2 className="text-sm sm:text-base font-semibold text-white text-center">
-    🤖 AI Assistant –{" "}
-    <span className="text-blue-400">Yehuda Putra Yura</span>
-  </h2>
-</header>
+        {/* ===== HEADER ===== */}
+        <header className="px-5 py-3 border-b border-white/10 text-center">
+          <h2 className="text-sm font-semibold text-white">
+            🤖 AI Assistant — <span className="text-blue-400">Yehuda Yura</span>
+          </h2>
+        </header>
 
-{/* ===== CHAT BODY (SCROLL) ===== */}
-<main className="flex-1 overflow-y-auto px-4 sm:px-6 py-4 space-y-3">
-  {messages.map((m, i) => (
-    <div
-      key={i}
-      className={`px-4 py-3 rounded-2xl text-sm leading-relaxed max-w-[88%] ${
-        m.role === "assistant"
-          ? "bg-white/10 text-gray-100 border border-white/10"
-          : "bg-blue-600 text-white ml-auto"
-      }`}
-    >
-      {m.content}
-    </div>
-  ))}
+        {/* ===== CHAT BODY ===== */}
+        <main className="flex-1 overflow-y-auto px-4 py-4 space-y-3">
+          {messages.map((m, i) => (
+            <div
+              key={i}
+              className={`px-4 py-2.5 rounded-xl text-sm leading-relaxed max-w-[85%] ${
+                m.role === "assistant"
+                  ? "bg-white/10 text-gray-100 border border-white/10"
+                  : "bg-blue-600 text-white ml-auto"
+              }`}
+            >
+              {m.content}
+            </div>
+          ))}
 
-  <div ref={chatEndRef} />
-</main>
-
+          <div ref={chatEndRef} />
+        </main>
 
         {/* QUICK ACTIONS */}
-        <div className="px-6 py-3 border-t border-white/10 flex flex-wrap gap-2">
+        <div className="px-4 py-2 border-t border-white/10 flex flex-wrap gap-2">
           {quickQuestions.map((q) => (
             <button
               key={q.intent}
@@ -133,24 +138,23 @@ export default function AIAssistant() {
             sendMessage({ message: input });
             setInput("");
           }}
-          className="px-6 py-4 border-t border-white/10 flex gap-2"
+          className="px-4 py-3 border-t border-white/10 flex gap-2"
         >
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Tanyakan tentang Yehuda..."
             disabled={typing}
-            className="flex-1 px-4 py-2 rounded-lg bg-black border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 px-4 py-2 rounded-lg bg-black border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
           />
           <button
             type="submit"
             disabled={typing}
-            className="px-5 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-500 transition disabled:opacity-50"
+            className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-500 transition disabled:opacity-50 text-sm"
           >
             Kirim
           </button>
         </form>
-
       </div>
     </section>
   );

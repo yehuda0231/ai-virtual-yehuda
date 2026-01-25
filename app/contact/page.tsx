@@ -23,7 +23,7 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="text-sm text-gray-400">Email</p>
-              <p className="font-medium">yehudayura03@gmail.com</p>
+              <p className="font-medium">yehuda.ai.bot@gmail.com</p>
             </div>
           </div>
   

@@ -163,7 +163,7 @@ Dalam jangka panjang, Yehuda ingin berkontribusi pada pengembangan teknologi AI 
       return `
 Anda dapat menghubungi Yehuda Putra Yura melalui:
 
-📧 Email: yehudayura03@gmail.com  
+📧 Email: yehuda.ai.bot@gmail.com  
 🔗 LinkedIn: linkedin.com/in/yehuda-yura-a0694b25  
 📍 Domisili: Manado, Indonesia
       `.trim();

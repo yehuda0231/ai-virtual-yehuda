@@ -1,7 +1,7 @@
 export default [
-    "Office Application",
-    "AI Engineer",
-    "Big Data",
+    "Data Science",
+    "AI Programming",
+    "Web-based Model Deployment",
     "Python Programming",
   ];
   
