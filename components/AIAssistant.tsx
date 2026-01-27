@@ -84,7 +84,19 @@ export default function AIAssistant() {
 
   return (
     <section className="w-full max-w-xl sm:max-w-2xl">
-      <div className="h-[520px] sm:h-[560px] flex flex-col rounded-2xl bg-black/70 border border-white/15 shadow-2xl backdrop-blur">
+      <div
+  className="
+    h-[calc(100vh-140px)]
+    max-h-[640px]
+    flex flex-col
+    rounded-2xl
+    bg-black/70
+    border border-white/15
+    shadow-2xl
+    backdrop-blur
+  "
+>
+
 
         {/* ===== HEADER ===== */}
         <header className="px-5 py-3 border-b border-white/10 text-center">
