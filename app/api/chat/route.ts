@@ -8,183 +8,148 @@ type Intent =
   | "certification"
   | "career"
   | "contact"
+  | "greeting"
+  | "thanks"
+  | "joke"
   | "random"
   | "unknown";
 
 /* =========================
-   INTENT DETECTION
+   SIMPLE NLP / INTENT
 ========================= */
-function detectIntent(message?: string, intent?: string): Intent {
+function detectIntent(message = "", intent?: string): Intent {
   if (intent) return intent as Intent;
-  if (!message) return "unknown";
 
   const q = message.toLowerCase();
 
-  if (q.includes("siapa") || q.includes("nama") || q.includes("tentang"))
-    return "identity";
+  if (q.match(/halo|hai|hello|hi|selamat/)) return "greeting";
+  if (q.match(/terima kasih|makasih|thanks/)) return "thanks";
+  if (q.match(/lucu|joke|bercanda/)) return "joke";
 
-  if (q.includes("skill") || q.includes("keahlian") || q.includes("teknologi"))
-    return "skills";
-
-  if (
-    q.includes("pengalaman") ||
-    q.includes("kerja") ||
-    q.includes("magang") ||
-    q.includes("projek")
-  )
-    return "experience";
-
-  if (
-    q.includes("pendidikan") ||
-    q.includes("kuliah") ||
-    q.includes("sekolah")
-  )
-    return "education";
-
-  if (
-    q.includes("sertifikat") ||
-    q.includes("prestasi") ||
-    q.includes("kompetisi")
-  )
-    return "certification";
-
-  if (q.includes("tujuan") || q.includes("karier") || q.includes("career"))
-    return "career";
-
-  if (
-    q.includes("kontak") ||
-    q.includes("hubungi") ||
-    q.includes("email") ||
-    q.includes("linkedin")
-  )
-    return "contact";
+  if (q.match(/siapa|nama|tentang kamu|profil/)) return "identity";
+  if (q.match(/skill|keahlian|teknologi|bisa apa/)) return "skills";
+  if (q.match(/pengalaman|kerja|magang|project/)) return "experience";
+  if (q.match(/pendidikan|kuliah|sekolah/)) return "education";
+  if (q.match(/sertifikat|prestasi|kompetisi/)) return "certification";
+  if (q.match(/tujuan|karier|cita-cita/)) return "career";
+  if (q.match(/kontak|email|linkedin|hubungi/)) return "contact";
 
   return "random";
 }
+
+/* =========================
+   RANDOM CHAT RESPONSES
+========================= */
+const randomReplies = [
+  "Menarik 🤖 Bisa kamu jelaskan lebih detail?",
+  "Pertanyaan yang bagus! Tapi kalau tentang Yehuda, aku bisa jelaskan lebih lengkap 😄",
+  "Aku siap bantu! Mau bahas skill, project, atau hal santai dulu?",
+  "Hehe 😄 Aku AI Assistant-nya Yehuda, tapi aku bisa diajak ngobrol juga kok.",
+  "Kalau mau serius bisa, mau santai juga boleh 😉",
+];
 
 /* =========================
    RESPONSE GENERATOR
 ========================= */
 function generateReply(intent: Intent): string {
   switch (intent) {
+    case "greeting":
+      return "Halo 👋 Senang bertemu denganmu! Aku AI Assistant milik Yehuda Yura. Mau tanya apa hari ini?";
+
+    case "thanks":
+      return "Sama-sama 😊 Kalau masih penasaran tentang Yehuda atau mau ngobrol santai, tinggal tanya ya!";
+
+    case "joke":
+      return "Kenapa programmer suka kopi? ☕ Karena tanpa kopi, kodenya cuma jadi komentar 😄";
+
     case "identity":
       return `
-Yehuda Putra Yura adalah mahasiswa aktif D4 Teknik Informatika di Politeknik Negeri Manado dengan fokus utama pada Artificial Intelligence (AI).
+Yehuda Putra Yura adalah mahasiswa D4 Teknik Informatika di Politeknik Negeri Manado.
 
-Ia memiliki minat kuat pada pengembangan AI yang aplikatif, khususnya Machine Learning, Computer Vision, dan sistem AI berbasis data. Yehuda terbiasa membangun solusi menggunakan pendekatan data-driven dan memiliki pemahaman integrasi AI ke dalam sistem berbasis web.
+Ia berfokus pada Artificial Intelligence (AI), khususnya Machine Learning, Computer Vision, dan pengembangan sistem berbasis data. Selain AI, Yehuda juga memiliki kemampuan integrasi AI ke dalam aplikasi web modern.
       `.trim();
 
     case "education":
       return `
-Riwayat pendidikan Yehuda Putra Yura adalah sebagai berikut:
+🎓 **Pendidikan Yehuda Putra Yura**
 
-• Saat ini menempuh pendidikan **D4 Teknik Informatika** di **Politeknik Negeri Manado** (2023–sekarang), dengan fokus pada Artificial Intelligence, pengolahan data, dan pengembangan sistem.
+• D4 Teknik Informatika – Politeknik Negeri Manado (2023–sekarang)  
+• SMK Prisma Pioneer Manado – Teknik Komputer dan Jaringan (2020–2023)
 
-• Lulusan **SMK Prisma Pioneer Manado**, jurusan **Teknik Komputer dan Jaringan** (2020–2023), dengan dasar kuat di jaringan komputer, perakitan perangkat, dan sistem IT dasar.
-
-Latar belakang pendidikan ini membentuk kombinasi kemampuan teknis IT dan pengembangan AI yang kuat.
+Latar belakang ini membentuk kombinasi kuat antara AI dan sistem IT.
       `.trim();
 
     case "skills":
       return `
-Keahlian utama Yehuda Putra Yura meliputi:
+🧠 **Skill & Teknologi**
 
-🔹 **AI & Data**
-- Python
-- Machine Learning
-- Computer Vision
-- Deep Learning (dasar)
-- Pengolahan dan analisis data
+🔹 AI & Data  
+- Python  
+- Machine Learning  
+- Computer Vision  
+- Deep Learning (dasar)  
+- Data Analysis  
 
-🔹 **Web & Sistem**
-- HTML, CSS, JavaScript
-- PHP
-- FastAPI
-- Integrasi AI ke aplikasi web
+🔹 Web & Sistem  
+- HTML, CSS, JavaScript  
+- PHP, FastAPI  
+- Integrasi AI ke Web  
 
-🔹 **Database**
-- MySQL
-- phpMyAdmin
+🔹 Database  
+- MySQL  
 
-🔹 **IT Support & Tools**
-- Microsoft Word, Excel, PowerPoint
-- Instalasi Windows & troubleshooting
-- Jaringan komputer dasar
-
-Skill ini mendukung pengembangan sistem AI dari sisi backend hingga deployment dasar.
+🔹 IT Support  
+- Troubleshooting  
+- Office & jaringan dasar
       `.trim();
 
     case "experience":
       return `
-Pengalaman profesional Yehuda Putra Yura mencakup:
+🛠️ **Pengalaman**
 
-• **Magang di Dinas Komunikasi dan Informatika Kota Manado (2022)**  
-  – Berperan sebagai IT Support  
-  – Membantu instalasi dan pemeliharaan sistem  
-  – Terlibat dalam pembuatan konten digital dan dokumentasi multimedia  
-  – Mendapat sertifikat resmi sebagai bukti kompetensi
+• Magang IT Support – Diskominfo Manado (2022)  
+• Proyek AI: Face Recognition, AI Assistant  
+• Proyek IoT & Web  
 
-• **Proyek AI & IoT**
-  – Sistem absensi wajah berbasis AI  
-  – Proyek IoT dan AI untuk keperluan edukasi  
-
-Pengalaman ini memperkuat pemahaman implementasi AI di dunia nyata.
+Pengalaman ini berfokus pada penerapan teknologi secara nyata.
       `.trim();
 
     case "certification":
       return `
-Sertifikasi & prestasi Yehuda Putra Yura antara lain:
+📜 **Sertifikasi & Prestasi**
 
-🏆 Juara 2 Kompetisi Coding Robotic IoT – Festival Media Remaja GMIM (2025)
-
-📜 Sertifikasi Kompetensi Junior Web Developer – BNSP (2024)  
-📜 Sertifikasi Office Perkantoran – BNSP (2023)  
-📜 Sertifikasi Data Scientist – Home Credit Indonesia x Rakamin Academy (2025)  
-📜 Sertifikasi PCAP: Programming Essentials in Python – OpenEDG & Cisco Networking Academy (2024)  
-📜 Sertifikat Pelatihan Big Data using Python – Digital Talent Scholarship (2024)  
-📜 National AI Student Challenge 2025 – AWS Regional LLM League (AI Singapore)
-
-Sertifikasi ini menunjukkan komitmen Yehuda dalam pengembangan kompetensi profesional.
+🏆 Juara 2 Coding Robotic IoT – GMIM (2025)  
+📜 BNSP Junior Web Developer  
+📜 Data Scientist – Rakamin x Home Credit  
+📜 PCAP Python – Cisco  
+📜 Big Data using Python – DTS  
+📜 AWS Regional LLM League – AI Singapore
       `.trim();
 
     case "career":
       return `
-Tujuan karier Yehuda Putra Yura adalah berkarier sebagai **AI Engineer**.
+🎯 **Tujuan Karier**
 
-Ia berfokus pada pengembangan solusi Artificial Intelligence yang:
+Yehuda bercita-cita menjadi **AI Engineer** yang membangun solusi AI:
 • Aplikatif  
 • Berdampak nyata  
-• Dapat digunakan oleh masyarakat luas  
-
-Dalam jangka panjang, Yehuda ingin berkontribusi pada pengembangan teknologi AI di bidang edukasi, layanan publik, dan sistem berbasis data.
+• Mudah digunakan masyarakat
       `.trim();
 
     case "contact":
       return `
-Anda dapat menghubungi Yehuda Putra Yura melalui:
+📬 **Kontak Yehuda Putra Yura**
 
 📧 Email: yehuda.ai.bot@gmail.com  
 🔗 LinkedIn: linkedin.com/in/yehuda-yura-a0694b25  
-📍 Domisili: Manado, Indonesia
+📍 Manado, Indonesia
       `.trim();
 
     case "random":
-      return `
-Saya adalah AI Assistant pribadi Yehuda Putra Yura.
-
-Anda dapat bertanya tentang:
-• Profil singkat  
-• Pendidikan  
-• Skill & teknologi  
-• Pengalaman kerja & proyek  
-• Sertifikasi  
-• Tujuan karier  
-
-Silakan pilih tombol di bawah atau ajukan pertanyaan bebas 🙂
-      `.trim();
+      return randomReplies[Math.floor(Math.random() * randomReplies.length)];
 
     default:
-      return "Silakan ajukan pertanyaan tentang Yehuda Putra Yura 🙂";
+      return "Aku belum yakin maksud pertanyaannya 🤔 Tapi kamu bisa tanya tentang Yehuda, skill, atau project-nya 😊";
   }
 }
 

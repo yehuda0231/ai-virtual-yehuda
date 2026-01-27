@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const quickQuestions = [
-  { label: "👤 Tentang Saya", intent: "identity", text: "Tentang saya" },
+  { label: "👤 Tentang Yehuda", intent: "identity", text: "Tentang Yehuda" },
   { label: "🧠 Skill & Teknologi", intent: "skills", text: "Skill & teknologi" },
   { label: "🛠️ Pengalaman", intent: "experience", text: "Pengalaman" },
   { label: "🎓 Pendidikan", intent: "education", text: "Pendidikan" },
