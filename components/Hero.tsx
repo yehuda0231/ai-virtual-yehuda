@@ -32,7 +32,7 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
             </span>
             <span className="text-[10px] text-cyan-100 uppercase tracking-[0.4em] font-mono font-bold">
-              Neural Station : Online
+              Yehuda Yura : Portofolio
             </span>
             <Sparkles size={12} className="text-cyan-400 ml-1" />
           </div>
