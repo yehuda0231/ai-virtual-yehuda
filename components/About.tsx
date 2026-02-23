@@ -42,7 +42,7 @@ export default function About() {
             <div className="space-y-8">
               <p className="text-zinc-300 text-xl md:text-2xl leading-relaxed font-light max-w-xl">
                 Saya seorang <span className="text-white font-semibold italic border-b-2 border-cyan-500/50">AI Engineer</span> yang
-                terobsesi membangun <span className="text-cyan-400 font-bold">Sistem Otonom</span> dan infrastruktur data skala besar.
+                sangat suka membangun <span className="text-cyan-400 font-bold">Sistem Otonom</span> dan infrastruktur data skala besar.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
