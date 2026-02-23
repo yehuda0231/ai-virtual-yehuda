@@ -86,7 +86,7 @@ export default function About() {
               <div className="relative w-[280px] h-[380px] md:w-[400px] md:h-[550px] rounded-[3rem] md:rounded-[3.5rem] overflow-hidden border border-white/10 bg-zinc-950 z-20 transition-all duration-700 group-hover:border-cyan-500/50 shadow-2xl">
                 
                 <Image
-                  src="/about-portrait.jpeg" 
+                  src="/putra1.jpeg" 
                   alt="Yehuda Yura Portrait"
                   fill
                   className="object-cover object-top grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.5s] ease-in-out"

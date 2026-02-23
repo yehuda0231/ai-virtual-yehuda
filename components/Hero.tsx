@@ -102,7 +102,7 @@ export default function Hero() {
             {/* Image Wrapper */}
             <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden border border-white/10 bg-zinc-900 z-20">
               <Image
-                src="/foto.jpeg"
+                src="/yehuda.jpeg"
                 alt="Yehuda Yura Portrait"
                 fill
                 className="object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 ease-in-out"
