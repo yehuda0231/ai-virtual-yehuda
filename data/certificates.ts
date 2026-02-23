@@ -36,8 +36,8 @@ export default [
     },
     {
       image: "/certificates/cert8.png",
-      title: "Home Credit – Yehuda Yura",
-      desc: "Magang di Dinas Kominfo Manado selama 3 bulan (Maret–Mei) saat masih bersekolah di SMK Prisma Pioneer Manado Berperan sebagai staf IT, membantu instalasi dan pemeliharaan sistem."
+      title: "Data Scientist - Credit Risk Modeling (Project Base Intership) Home Credit Indonesia x Rakamin Academy 2026 – Yehuda Yura",
+      desc: "Mengembangkan model prediksi risiko kredit end-to-end menggunakan 300.000+ data nasabah"
     },
   ];
   
