@@ -34,5 +34,10 @@ export default [
       title: "Dinas Komunikasi dan Informatika Kota Manado – Yehuda Yura",
       desc: "Magang di Dinas Kominfo Manado selama 3 bulan (Maret–Mei) saat masih bersekolah di SMK Prisma Pioneer Manado Berperan sebagai staf IT, membantu instalasi dan pemeliharaan sistem."
     },
+    {
+      image: "/certificates/cert8.png",
+      title: "Home Credit – Yehuda Yura",
+      desc: "Magang di Dinas Kominfo Manado selama 3 bulan (Maret–Mei) saat masih bersekolah di SMK Prisma Pioneer Manado Berperan sebagai staf IT, membantu instalasi dan pemeliharaan sistem."
+    },
   ];
   
