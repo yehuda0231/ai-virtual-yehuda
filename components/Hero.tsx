@@ -6,18 +6,31 @@ import { Cpu, ArrowRight, FileText, Sparkles, Zap, Brain, Bot } from "lucide-rea
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 bg-[#030708] overflow-hidden pt-20 lg:pt-0">
+    <section className="relative min-h-screen flex items-center justify-center px-6 bg-[#030708] overflow-hidden pt-1 lg:pt-0">
       
       {/* --- 1. COMPACT NEURAL BACKGROUND --- */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute inset-0 top-0 z-0 pointer-events-none">
+        {/* Top Blue Fade (menyatu dari navbar ke grid) */}
+<div
+  className="
+    absolute
+    top-0
+    left-0
+    right-0
+    h-48
+    bg-gradient-to-b
+    from-[#030708]
+    via-cyan-500/10
+    to-transparent
+  "
+/>
         {/* Grid System yang lebih rapat agar tidak kosong */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#0ea5e915_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e915_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
         
         {/* Central Hub Glow - Mengisi kekosongan di tengah */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[50rem] w-[50rem] bg-cyan-500/10 blur-[120px] rounded-full opacity-60" />
         
-        {/* Top Radial Highlight */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent shadow-[0_0_20px_rgba(6,182,212,0.5)]" />
+      
       </div>
 
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">

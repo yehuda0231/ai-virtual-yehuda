@@ -114,7 +114,7 @@ export default function ContactPage() {
 
         {/* --- FOOTER INFO --- */}
         <p className="text-center mt-10 text-[10px] font-mono text-zinc-700 tracking-[0.4em] uppercase">
-          Neural-Node Connectivity: Established
+          Yehuda Yura Connectivity: Established
         </p>
 
       </div>

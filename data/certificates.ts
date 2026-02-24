@@ -1,4 +1,10 @@
 export default [
+
+    {
+      image: "/certificates/cert8.png",
+      title: "Data Scientist - Credit Risk Modeling (Project Base Intership) Home Credit Indonesia x Rakamin Academy 2026 – Yehuda Yura",
+      desc: "Mengembangkan model prediksi risiko kredit end-to-end menggunakan 300.000+ data nasabah"
+    },
     {
       image: "/certificates/cert1.png",
       title: "Office Application – Yehuda Yura",
@@ -33,11 +39,6 @@ export default [
       image: "/certificates/cert7.png",
       title: "Dinas Komunikasi dan Informatika Kota Manado – Yehuda Yura",
       desc: "Magang di Dinas Kominfo Manado selama 3 bulan (Maret–Mei) saat masih bersekolah di SMK Prisma Pioneer Manado Berperan sebagai staf IT, membantu instalasi dan pemeliharaan sistem."
-    },
-    {
-      image: "/certificates/cert8.png",
-      title: "Data Scientist - Credit Risk Modeling (Project Base Intership) Home Credit Indonesia x Rakamin Academy 2026 – Yehuda Yura",
-      desc: "Mengembangkan model prediksi risiko kredit end-to-end menggunakan 300.000+ data nasabah"
     },
   ];
   
