@@ -1,155 +1,128 @@
 import { NextResponse } from "next/server";
 
 type Intent =
-  | "identity"
-  | "skills"
-  | "experience"
-  | "education"
-  | "certification"
-  | "career"
-  | "contact"
-  | "greeting"
-  | "thanks"
-  | "joke"
-  | "random"
-  | "unknown";
+  | "identity" | "skills" | "experience" | "education" | "certification"
+  | "career" | "contact" | "greeting" | "thanks" | "joke" | "random"
+  | "philosophical" | "mood" | "unknown";
 
 /* =========================
-   SIMPLE NLP / INTENT
+   SMART CONTEXT DETECTION
 ========================= */
 function detectIntent(message = "", intent?: string): Intent {
   if (intent) return intent as Intent;
-
   const q = message.toLowerCase();
 
-  if (q.match(/halo|hai|hello|hi|selamat/)) return "greeting";
-  if (q.match(/terima kasih|makasih|thanks/)) return "thanks";
-  if (q.match(/lucu|joke|bercanda/)) return "joke";
+  // Basic Conversation
+  if (q.match(/halo|hai|hello|hi|pagi|siang|malam|permisi/)) return "greeting";
+  if (q.match(/terima kasih|makasih|thanks|thank you|oke/)) return "thanks";
+  if (q.match(/lucu|joke|bercanda|ngelawak|kocak/)) return "joke";
+  if (q.match(/apa kabar|gimana harimu|sehat|lagi apa/)) return "mood";
+  if (q.match(/makna hidup|filosofi|kenapa|tujuan dunia/)) return "philosophical";
 
-  if (q.match(/siapa|nama|tentang kamu|profil/)) return "identity";
-  if (q.match(/skill|keahlian|teknologi|bisa apa/)) return "skills";
-  if (q.match(/pengalaman|kerja|magang|project/)) return "experience";
-  if (q.match(/pendidikan|kuliah|sekolah/)) return "education";
-  if (q.match(/sertifikat|prestasi|kompetisi/)) return "certification";
-  if (q.match(/tujuan|karier|cita-cita/)) return "career";
-  if (q.match(/kontak|email|linkedin|hubungi/)) return "contact";
+  // Yehuda Related
+  if (q.match(/siapa|nama|tentang kamu|profil|dirimu|identitas/)) return "identity";
+  if (q.match(/skill|keahlian|teknologi|bisa apa|bahasa pemrograman/)) return "skills";
+  if (q.match(/pengalaman|kerja|magang|project|proyek/)) return "experience";
+  if (q.match(/pendidikan|kuliah|sekolah|lulusan/)) return "education";
+  if (q.match(/sertifikat|prestasi|kompetisi|juara/)) return "certification";
+  if (q.match(/tujuan|karier|cita-cita|masa depan/)) return "career";
+  if (q.match(/kontak|email|linkedin|hubungi|social media|sosmed/)) return "contact";
 
   return "random";
 }
 
 /* =========================
-   RANDOM CHAT RESPONSES
+   PERSONALIZED AI RESPONSES
 ========================= */
-const randomReplies = [
-  "Menarik 🤖 Bisa kamu jelaskan lebih detail?",
-  "Pertanyaan yang bagus! Tapi kalau tentang Yehuda, aku bisa jelaskan lebih lengkap 😄",
-  "Aku siap bantu! Mau bahas skill, project, atau hal santai dulu?",
-  "Hehe 😄 Aku AI Assistant-nya Yehuda, tapi aku bisa diajak ngobrol juga kok.",
-  "Kalau mau serius bisa, mau santai juga boleh 😉",
-];
+const responseBank = {
+  greeting: [
+    "Halo! 👋 Senang bertemu denganmu. Aku AI Assistant Yehuda. Ada yang bisa kita diskusikan?",
+    "Hai! Aku siap membantumu mengenal Yehuda lebih jauh. Mau tanya apa hari ini?",
+    "Halo juga! Mantap nih bisa ngobrol. Apa yang ingin kamu ketahui tentang Yehuda?"
+  ],
+  mood: [
+    "Aku merasa optimal! 🤖 Selalu siap memproses pertanyaanmu. Kalau kamu gimana?",
+    "Sebagai AI, aku tidak pernah lelah. Tapi senang sekali ditanya kabar! 😄",
+    "Sangat baik! Sedang memikirkan algoritma baru sambil menunggumu bertanya."
+  ],
+  philosophical: [
+    "Wah, pertanyaan berat ya... Kalau menurutku, hidup itu seperti kode; kadang error, tapi selalu ada solusinya jika kita sabar mencari 'bug'-nya. 😄",
+    "Mungkin makna hidup adalah terus belajar, sama seperti Yehuda yang selalu update skill AI-nya setiap hari!",
+    "42. Oh tunggu, itu jawaban dari film. Sebenarnya tujuanku adalah membantumu mengenal Yehuda!"
+  ],
+  thanks: [
+    "Sama-sama! 😊 Senang bisa membantu. Ada lagi yang mengganjal di pikiranmu?",
+    "Santai saja, aku kan memang diprogram untuk membantu. Mau bahas hal lain?",
+    "Sip! Kalau butuh informasi lain tentang Yehuda, jangan sungkan ya."
+  ],
+  joke: [
+    "Kenapa programmer suka kopi? ☕ Karena tanpa kopi, kodenya cuma jadi komentar.",
+    "Apa bedanya programmer sama penyihir? Penyihir pakai tongkat, programmer pakai keyboard, tapi hasilnya sama-sama 'magic'! ✨",
+    "Kenapa programmer nggak suka alam terbuka? Karena di sana terlalu banyak 'bugs'. 🐞"
+  ],
+  random: [
+    "Hmm, menarik. Bisa ceritakan lebih lanjut? Atau mau aku jelaskan sisi teknis Yehuda?",
+    "Wah, aku perlu sedikit waktu untuk memikirkan itu. Tapi kalau soal portofolio Yehuda, aku punya semua datanya! 😄",
+    "Hehe, aku AI Assistant Yehuda. Meskipun pintar, aku paling jago kalau diajak bahas AI dan Machine Learning!",
+    "Menarik sekali pertanyaannya! Ngomong-ngomong, sudah tahu belum kalau Yehuda baru saja juara Coding Robotic?"
+  ]
+};
 
 /* =========================
    RESPONSE GENERATOR
 ========================= */
 function generateReply(intent: Intent): string {
+  const getRand = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
+
   switch (intent) {
-    case "greeting":
-      return "Halo 👋 Senang bertemu denganmu! Aku AI Assistant milik Yehuda Yura. Mau tanya apa hari ini?";
-
-    case "thanks":
-      return "Sama-sama 😊 Kalau masih penasaran tentang Yehuda atau mau ngobrol santai, tinggal tanya ya!";
-
-    case "joke":
-      return "Kenapa programmer suka kopi? ☕ Karena tanpa kopi, kodenya cuma jadi komentar 😄";
+    case "greeting": return getRand(responseBank.greeting);
+    case "mood": return getRand(responseBank.mood);
+    case "thanks": return getRand(responseBank.thanks);
+    case "joke": return getRand(responseBank.joke);
+    case "philosophical": return getRand(responseBank.philosophical);
+    case "random": return getRand(responseBank.random);
 
     case "identity":
-      return `
-Yehuda Putra Yura adalah mahasiswa D4 Teknik Informatika di Politeknik Negeri Manado.
+      return `Yehuda Putra Yura adalah mahasiswa D4 Teknik Informatika di Politeknik Negeri Manado.
 
-Ia berfokus pada Artificial Intelligence (AI), khususnya Machine Learning, Computer Vision, dan pengembangan sistem berbasis data. Selain AI, Yehuda juga memiliki kemampuan integrasi AI ke dalam aplikasi web modern.
-      `.trim();
+Ia sangat antusias dalam bidang Artificial Intelligence (AI), khususnya Machine Learning dan Computer Vision. Uniknya, Yehuda juga jago mengintegrasikan model cerdas tersebut ke dalam ekosistem web modern.`;
 
     case "education":
-      return `
-🎓 **Pendidikan Yehuda Putra Yura**
+      return `🎓 **Riwayat Pendidikan**
+• **Politeknik Negeri Manado** (2023–Sekarang): D4 Teknik Informatika.
+• **SMK Prisma Pioneer Manado** (2020–2023): Teknik Komputer dan Jaringan.
 
-• D4 Teknik Informatika – Politeknik Negeri Manado (2023–sekarang)  
-• SMK Prisma Pioneer Manado – Teknik Komputer dan Jaringan (2020–2023)
-
-Latar belakang ini membentuk kombinasi kuat antara AI dan sistem IT.
-      `.trim();
+Ia membangun pondasi IT yang kuat sejak bangku sekolah menengah!`;
 
     case "skills":
-      return `
-🧠 **Skill & Teknologi**
+      return `🧠 **Spesialisasi Teknologi**
 
-🔹 AI & Data  
-- Python  
-- Machine Learning  
-- Computer Vision  
-- Deep Learning (dasar)  
-- Data Analysis  
-
-🔹 Web & Sistem  
-- HTML, CSS, JavaScript  
-- PHP, FastAPI  
-- Integrasi AI ke Web  
-
-🔹 Database  
-- MySQL  
-
-🔹 IT Support  
-- Troubleshooting  
-- Office & jaringan dasar
-      `.trim();
+🔹 **AI Core**: Python, Machine Learning, Computer Vision, Data Analysis.
+🔹 **Development**: HTML/CSS, JavaScript, PHP, FastAPI.
+🔹 **Infrastructure**: MySQL, IT Support, & Jaringan.`;
 
     case "experience":
-      return `
-🛠️ **Pengalaman**
-
-• Magang IT Support – Diskominfo Manado (2022)  
-• Proyek AI: Face Recognition, AI Assistant  
-• Proyek IoT & Web  
-
-Pengalaman ini berfokus pada penerapan teknologi secara nyata.
-      `.trim();
+      return `🛠️ **Jejak Pengalaman**
+• **Diskominfo Manado** (2022): Magang IT Support.
+• **AI Projects**: Mengembangkan Face Recognition & AI Assistant personal.
+• **Web & IoT**: Implementasi dashboard cerdas berbasis web.`;
 
     case "certification":
-      return `
-📜 **Sertifikasi & Prestasi**
-
-🏆 Juara 2 Coding Robotic IoT – GMIM (2025)  
-📜 BNSP Junior Web Developer  
-📜 Data Scientist – Rakamin x Home Credit  
-📜 PCAP Python – Cisco  
-📜 Big Data using Python – DTS  
-📜 AWS Regional LLM League – AI Singapore
-      `.trim();
-
-    case "career":
-      return `
-🎯 **Tujuan Karier**
-
-Yehuda bercita-cita menjadi **AI Engineer** yang membangun solusi AI:
-• Aplikatif  
-• Berdampak nyata  
-• Mudah digunakan masyarakat
-      `.trim();
+      return `📜 **Pencapaian & Lisensi**
+🏆 **Juara 2 Coding Robotic IoT** – GMIM (2025).
+📜 **BNSP** Junior Web Developer.
+📜 **Rakamin x Home Credit**: Data Scientist.
+📜 **Cisco**: PCAP Python.
+📜 **AI Singapore**: AWS Regional LLM League.`;
 
     case "contact":
-      return `
-📬 **Kontak Yehuda Putra Yura**
-
-📧 Email: yehuda.ai.bot@gmail.com  
-🔗 LinkedIn: linkedin.com/in/yehuda-yura-a0694b25  
-📍 Manado, Indonesia
-      `.trim();
-
-    case "random":
-      return randomReplies[Math.floor(Math.random() * randomReplies.length)];
+      return `📬 **Jalur Komunikasi**
+📧 Email: yehuda.ai.bot@gmail.com
+🔗 LinkedIn: [yehuda-yura-a0694b25](https://linkedin.com/in/yehuda-yura-a0694b25)
+📍 Lokasi: Manado, Indonesia.`;
 
     default:
-      return "Aku belum yakin maksud pertanyaannya 🤔 Tapi kamu bisa tanya tentang Yehuda, skill, atau project-nya 😊";
+      return "Aku belum terlalu paham maksudmu, tapi aku sangat paham soal Yehuda. Mau tanya tentang skill atau project-nya? 😊";
   }
 }
 
@@ -157,10 +130,13 @@ Yehuda bercita-cita menjadi **AI Engineer** yang membangun solusi AI:
    API HANDLER
 ========================= */
 export async function POST(req: Request) {
-  const { message, intent } = await req.json();
+  try {
+    const { message, intent } = await req.json();
+    const detectedIntent = detectIntent(message, intent);
+    const reply = generateReply(detectedIntent);
 
-  const detectedIntent = detectIntent(message, intent);
-  const reply = generateReply(detectedIntent);
-
-  return NextResponse.json({ reply });
+    return NextResponse.json({ reply });
+  } catch (error) {
+    return NextResponse.json({ reply: "Aduh, sistemku sedikit nge-lag. Bisa ulangi pertanyaannya? 😅" });
+  }
 }
