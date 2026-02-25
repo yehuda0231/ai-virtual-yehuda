@@ -29,11 +29,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
-        {/* ✅ NAVBAR HARUS DI SINI */}
+        {/* Navbar akan muncul di posisi paling atas pada setiap halaman */}
         <Navbar />
 
-        {/* CONTENT */}
-        {children}
+        {/* Konten utama halaman akan dirender di sini */}
+        <main className="min-h-screen">
+          {children}
+        </main>
+
+        {/* Footer akan selalu muncul di posisi paling bawah pada setiap halaman */}
+        <Footer />
       </body>
     </html>
   );
