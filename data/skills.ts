@@ -1,7 +1,7 @@
 export default [
     "Data Science",
     "AI Programming",
-    "Web-based Model Deployment",
+    "Web Development",
     "Python Programming",
   ];
   
