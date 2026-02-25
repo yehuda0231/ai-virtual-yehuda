@@ -31,7 +31,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <section className="relative min-h-screen pt-28 pb-20 px-6 overflow-hidden bg-black">
+    <section className="relative min-h-screen pt-20 pb-20 px-6 overflow-hidden bg-black">
       
       {/* --- 1. NEURAL BACKGROUND DECORATION --- */}
       <div className="absolute inset-0 z-0 pointer-events-none">

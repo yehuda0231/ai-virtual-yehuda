@@ -124,7 +124,7 @@ export default function Navbar() {
           <div className="mt-4 pt-4 border-t border-white/5 flex flex-col items-center gap-2">
              <div className="flex items-center gap-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-cyan-500 animate-ping" />
-                <span className="text-[9px] font-mono text-cyan-500/60 uppercase tracking-[0.3em]">Neural Link Established</span>
+                <span className="text-[9px] font-mono text-cyan-500/60 uppercase tracking-[0.3em]">Yehuda Yura</span>
              </div>
           </div>
         </div>

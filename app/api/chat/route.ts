@@ -137,7 +137,7 @@ Ia membangun pondasi IT yang kuat sejak bangku sekolah menengah!`;
     case "experience":
       return `🛠️ **Jejak Pengalaman**
 
-• **Diskominfo Manado** (2022): Magang IT Support.
+• **Kominfo Manado** (2022): Magang IT Support Selama 3 Bulan Sebagai IT Staf dalam Pemeliharaan Sistem Dan Sebagai Tim Multimedia DI Pemerintah Kota Manado .
 • **AI Projects**: Mengembangkan Face Recognition & AI Assistant personal.
 • **Web & IoT**: Implementasi dashboard cerdas berbasis web.`;
 
@@ -148,6 +148,7 @@ Ia membangun pondasi IT yang kuat sejak bangku sekolah menengah!`;
 📜 **BNSP** Junior Web Developer.
 📜 **Rakamin x Home Credit**: Data Scientist.
 📜 **Cisco**: PCAP Python.
+📜 **Komdigi**: Big Data Using Python.
 📜 **AI Singapore**: AWS Regional LLM League.`;
 
     case "contact":

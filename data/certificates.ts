@@ -6,9 +6,9 @@ export default [
       desc: "Mengembangkan model prediksi risiko kredit end-to-end menggunakan 300.000+ data nasabah"
     },
     {
-      image: "/certificates/cert1.png",
-      title: "Office Application – Yehuda Yura",
-      desc: "Sertifikasi Kompetensi Office Perkantoran – Badan Nasional Sertifikasi Profesi (2023)."
+      image: "/certificates/cert5.png",
+      title: "Big Data using Python – Yehuda Yura",
+      desc: "Sertifikat Pelatihan Big Data using Python Fresh Graduate Academy Digital Talent Scholarship (2024)."
     },
     {
       image: "/certificates/cert2.png",
@@ -26,19 +26,20 @@ export default [
       desc: "Sertifikat PCAP : Programming Essentials in Python – OpenEDG & Cisco Networking Academy (2024)."
     },
     {
-      image: "/certificates/cert5.png",
-      title: "Big Data using Python – Yehuda Yura",
-      desc: "Sertifikat Pelatihan Big Data using Python Fresh Graduate Academy Digital Talent Scholarship (2024)."
+      image: "/certificates/cert7.png",
+      title: "Dinas Komunikasi dan Informatika Kota Manado – Yehuda Yura",
+      desc: "Magang di Dinas Kominfo Manado selama 3 bulan (Maret–Mei) saat masih bersekolah di SMK Prisma Pioneer Manado Berperan sebagai staf IT, membantu instalasi dan pemeliharaan sistem."
     },
+
     {
       image: "/certificates/cert6.png",
       title: "AI Student Challenge 2025 – Yehuda Yura",
       desc: "Sertifikat National AI Student Challenge 2025 – AWS Regional LLM League – AI Singapore."
     },
     {
-      image: "/certificates/cert7.png",
-      title: "Dinas Komunikasi dan Informatika Kota Manado – Yehuda Yura",
-      desc: "Magang di Dinas Kominfo Manado selama 3 bulan (Maret–Mei) saat masih bersekolah di SMK Prisma Pioneer Manado Berperan sebagai staf IT, membantu instalasi dan pemeliharaan sistem."
-    },
+      image: "/certificates/cert1.png",
+      title: "Office Application – Yehuda Yura",
+      desc: "Sertifikasi Kompetensi Office Perkantoran – Badan Nasional Sertifikasi Profesi (2023)."
+    }
   ];
   

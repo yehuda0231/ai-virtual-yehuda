@@ -86,6 +86,8 @@ export default function Footer() {
                 { name: "Sertifikat", href: "/certificates" },
                 { name: "Proyek", href: "/projects" },
                 { name: "AI Assistant", href: "/ai" },
+                { name: "Pendidikan", href: "/education" },
+                { name: "kontak", href: "/contact" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link
