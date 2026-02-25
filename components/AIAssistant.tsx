@@ -21,7 +21,7 @@ export default function AIAssistant() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Halo 👋 Saya AI Assistant Yehuda Yura. Ada yang bisa saya bantu terkait profil atau pengalaman Yehuda?",
+      content: "Halo 👋 Saya AI Assistant Yehuda Yura. Ingin tahu lebih dalam tentang profil atau keahlian Yehuda? Silakan pilih opsi menarik di bawah ini untuk memulai! 🚀",
     },
   ]);
 
