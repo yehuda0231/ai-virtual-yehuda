@@ -6,7 +6,7 @@ import { Cpu, ArrowRight, FileText, Sparkles, Zap, Brain, Bot } from "lucide-rea
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 bg-[#030708] overflow-hidden pt-0 lg:pt-0">
+    <section className="relative min-h-screen flex items-center justify-center px-6 bg-[#030708] overflow-hidden -mt-[80px] pt-[80px]">
       
       {/* --- 1. COMPACT NEURAL BACKGROUND --- */}
       <div className="absolute inset-0 top-0 z-0 pointer-events-none">

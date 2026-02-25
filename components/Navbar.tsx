@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Cpu, LayoutGrid, Award, Mail, Home, Radio } from "lucide-react";
+// SAYA TAMBAHKAN GraduationCap DI SINI:
+import { Menu, X, Cpu, LayoutGrid, Award, Mail, Home, Radio, GraduationCap } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function Navbar() {
     { name: "Project", href: "/projects", icon: <LayoutGrid size={14} /> },
     { name: "Sertifikat", href: "/certificates", icon: <Award size={14} /> },
     { name: "AI Assistant", href: "/ai", icon: <Cpu size={14} />, special: true },
+    { name: "Pendidikan", href: "/education", icon: <GraduationCap size={14} /> },
     { name: "Kontak", href: "/contact", icon: <Mail size={14} /> },
   ];
 
@@ -58,7 +60,7 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* --- MENU DESKTOP (Solid & High-Tech) --- */}
+        {/* --- MENU DESKTOP --- */}
         <div className="hidden md:flex items-center gap-1 p-1 bg-zinc-900/50 border border-white/10 rounded-2xl backdrop-blur-xl">
           {menuItems.map((item) => (
             <Link
@@ -76,7 +78,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* --- SYSTEM STATUS (Desktop Only) --- */}
+        {/* --- SYSTEM STATUS --- */}
         <div className="hidden lg:flex items-center gap-3 px-4 py-2 border-l border-white/10 ml-4">
             <Radio size={14} className="text-cyan-500 animate-pulse" />
             <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-tighter">Node: Stable</span>
@@ -91,7 +93,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* --- MENU MOBILE (Solid Neural Panel) --- */}
+      {/* --- MENU MOBILE --- */}
       <div 
         className={`fixed inset-x-0 top-[76px] p-6 md:hidden transition-all duration-500 transform ${
           open ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-8 scale-95 pointer-events-none"

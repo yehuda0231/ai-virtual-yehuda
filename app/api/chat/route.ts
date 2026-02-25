@@ -1,15 +1,28 @@
 import { NextResponse } from "next/server";
 
 type Intent =
-  | "identity" | "skills" | "experience" | "education" | "certification"
-  | "career" | "contact" | "greeting" | "thanks" | "joke" | "random"
-  | "philosophical" | "mood" | "unknown";
+  | "identity"
+  | "skills"
+  | "experience"
+  | "education"
+  | "certification"
+  | "career"
+  | "contact"
+  | "greeting"
+  | "thanks"
+  | "joke"
+  | "random"
+  | "philosophical"
+  | "mood"
+  | "unknown";
 
 /* =========================
    SMART CONTEXT DETECTION
 ========================= */
+
 function detectIntent(message = "", intent?: string): Intent {
   if (intent) return intent as Intent;
+
   const q = message.toLowerCase();
 
   // Basic Conversation
@@ -34,32 +47,38 @@ function detectIntent(message = "", intent?: string): Intent {
 /* =========================
    PERSONALIZED AI RESPONSES
 ========================= */
+
 const responseBank = {
   greeting: [
     "Halo! 👋 Senang bertemu denganmu. Aku AI Assistant Yehuda. Ada yang bisa kita diskusikan?",
     "Hai! Aku siap membantumu mengenal Yehuda lebih jauh. Mau tanya apa hari ini?",
     "Halo juga! Mantap nih bisa ngobrol. Apa yang ingin kamu ketahui tentang Yehuda?"
   ],
+
   mood: [
     "Aku merasa optimal! 🤖 Selalu siap memproses pertanyaanmu. Kalau kamu gimana?",
     "Sebagai AI, aku tidak pernah lelah. Tapi senang sekali ditanya kabar! 😄",
     "Sangat baik! Sedang memikirkan algoritma baru sambil menunggumu bertanya."
   ],
+
   philosophical: [
     "Wah, pertanyaan berat ya... Kalau menurutku, hidup itu seperti kode; kadang error, tapi selalu ada solusinya jika kita sabar mencari 'bug'-nya. 😄",
     "Mungkin makna hidup adalah terus belajar, sama seperti Yehuda yang selalu update skill AI-nya setiap hari!",
     "42. Oh tunggu, itu jawaban dari film. Sebenarnya tujuanku adalah membantumu mengenal Yehuda!"
   ],
+
   thanks: [
     "Sama-sama! 😊 Senang bisa membantu. Ada lagi yang mengganjal di pikiranmu?",
     "Santai saja, aku kan memang diprogram untuk membantu. Mau bahas hal lain?",
     "Sip! Kalau butuh informasi lain tentang Yehuda, jangan sungkan ya."
   ],
+
   joke: [
     "Kenapa programmer suka kopi? ☕ Karena tanpa kopi, kodenya cuma jadi komentar.",
     "Apa bedanya programmer sama penyihir? Penyihir pakai tongkat, programmer pakai keyboard, tapi hasilnya sama-sama 'magic'! ✨",
     "Kenapa programmer nggak suka alam terbuka? Karena di sana terlalu banyak 'bugs'. 🐞"
   ],
+
   random: [
     "Hmm, menarik. Bisa ceritakan lebih lanjut? Atau mau aku jelaskan sisi teknis Yehuda?",
     "Wah, aku perlu sedikit waktu untuk memikirkan itu. Tapi kalau soal portofolio Yehuda, aku punya semua datanya! 😄",
@@ -71,16 +90,29 @@ const responseBank = {
 /* =========================
    RESPONSE GENERATOR
 ========================= */
+
 function generateReply(intent: Intent): string {
-  const getRand = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
+  const getRand = (arr: string[]) =>
+    arr[Math.floor(Math.random() * arr.length)];
 
   switch (intent) {
-    case "greeting": return getRand(responseBank.greeting);
-    case "mood": return getRand(responseBank.mood);
-    case "thanks": return getRand(responseBank.thanks);
-    case "joke": return getRand(responseBank.joke);
-    case "philosophical": return getRand(responseBank.philosophical);
-    case "random": return getRand(responseBank.random);
+    case "greeting":
+      return getRand(responseBank.greeting);
+
+    case "mood":
+      return getRand(responseBank.mood);
+
+    case "thanks":
+      return getRand(responseBank.thanks);
+
+    case "joke":
+      return getRand(responseBank.joke);
+
+    case "philosophical":
+      return getRand(responseBank.philosophical);
+
+    case "random":
+      return getRand(responseBank.random);
 
     case "identity":
       return `Yehuda Putra Yura adalah mahasiswa D4 Teknik Informatika di Politeknik Negeri Manado.
@@ -89,6 +121,7 @@ Ia sangat antusias dalam bidang Artificial Intelligence (AI), khususnya Machine 
 
     case "education":
       return `🎓 **Riwayat Pendidikan**
+
 • **Politeknik Negeri Manado** (2023–Sekarang): D4 Teknik Informatika.
 • **SMK Prisma Pioneer Manado** (2020–2023): Teknik Komputer dan Jaringan.
 
@@ -103,12 +136,14 @@ Ia membangun pondasi IT yang kuat sejak bangku sekolah menengah!`;
 
     case "experience":
       return `🛠️ **Jejak Pengalaman**
+
 • **Diskominfo Manado** (2022): Magang IT Support.
 • **AI Projects**: Mengembangkan Face Recognition & AI Assistant personal.
 • **Web & IoT**: Implementasi dashboard cerdas berbasis web.`;
 
     case "certification":
       return `📜 **Pencapaian & Lisensi**
+
 🏆 **Juara 2 Coding Robotic IoT** – GMIM (2025).
 📜 **BNSP** Junior Web Developer.
 📜 **Rakamin x Home Credit**: Data Scientist.
@@ -117,8 +152,9 @@ Ia membangun pondasi IT yang kuat sejak bangku sekolah menengah!`;
 
     case "contact":
       return `📬 **Jalur Komunikasi**
+
 📧 Email: yehuda.ai.bot@gmail.com
-🔗 LinkedIn: [yehuda-yura-a0694b25](https://linkedin.com/in/yehuda-yura-a0694b25)
+🔗 LinkedIn: https://linkedin.com/in/yehuda-yura-a0694b25
 📍 Lokasi: Manado, Indonesia.`;
 
     default:
@@ -129,6 +165,7 @@ Ia membangun pondasi IT yang kuat sejak bangku sekolah menengah!`;
 /* =========================
    API HANDLER
 ========================= */
+
 export async function POST(req: Request) {
   try {
     const { message, intent } = await req.json();
@@ -137,6 +174,8 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ reply });
   } catch (error) {
-    return NextResponse.json({ reply: "Aduh, sistemku sedikit nge-lag. Bisa ulangi pertanyaannya? 😅" });
+    return NextResponse.json({
+      reply: "Aduh, sistemku sedikit nge-lag. Bisa ulangi pertanyaannya? 😅"
+    });
   }
 }
