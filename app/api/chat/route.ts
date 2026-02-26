@@ -58,7 +58,10 @@ const responseBank = {
   mood: [
     "Aku merasa optimal! 🤖 Selalu siap memproses pertanyaanmu. Kalau kamu gimana?",
     "Sebagai AI, aku tidak pernah lelah. Tapi senang sekali ditanya kabar! 😄",
-    "Sangat baik! Sedang memikirkan algoritma baru sambil menunggumu bertanya."
+    "Sangat baik! Sedang memikirkan algoritma baru sambil menunggumu bertanya.",
+    "Status: OPTIMAL. Semua sistem berjalan pada 0.002ms latency. 🤖",
+    "Kapasitas memori aman. Siap menganalisis pertanyaanmu tentang Yehuda!",
+    "Sedang melakukan enkripsi data... Canda! Aku 100% siap membantumu. 😄"
   ],
 
   philosophical: [
@@ -136,17 +139,17 @@ Ia membangun pondasi IT yang kuat sejak bangku sekolah menengah!`;
 
     case "experience":
       return `🛠️ **Jejak Pengalaman**
-
-• **Kominfo Manado** (2022): Magang IT Support Selama 3 Bulan Sebagai IT Staf dalam Pemeliharaan Sistem Dan Sebagai Tim Multimedia DI Pemerintah Kota Manado .
+• **Home Credit Indonesia** (2026): Data Scientist (Virtual Internship). Mengolah ±300.000 data nasabah dengan model Random Forest & Logistic Regression (ROC AUC > 0.7).
+• **Kominfo Manado** (2022): Magang IT Support Selama 3 Bulan Sebagai IT Staf dalam Pemeliharaan Sistem Dan Sebagai Tim Multimedia Di Pemerintah Kota Manado .
 • **AI Projects**: Mengembangkan Face Recognition & AI Assistant personal.
 • **Web & IoT**: Implementasi dashboard cerdas berbasis web.`;
 
     case "certification":
       return `📜 **Pencapaian & Lisensi**
 
+📜 **Home Credit x Rakamin**: Data Scientist (Predikat: Excellent - 89.3/100).      
 🏆 **Juara 2 Coding Robotic IoT** – GMIM (2025).
 📜 **BNSP** Junior Web Developer.
-📜 **Rakamin x Home Credit**: Data Scientist.
 📜 **Cisco**: PCAP Python.
 📜 **Komdigi**: Big Data Using Python.
 📜 **AI Singapore**: AWS Regional LLM League.`;
@@ -159,6 +162,7 @@ Ia membangun pondasi IT yang kuat sejak bangku sekolah menengah!`;
 📍 Lokasi: Manado, Indonesia.`;
 
     default:
+      return "Maaf, algoritma pemrosesanku belum mengenali perintah itu. Coba tanya: 'Apa skill Yehuda?' atau 'Gimana hasil proyek Home Credit-nya?"
       return "Aku belum terlalu paham maksudmu, tapi aku sangat paham soal Yehuda. Mau tanya tentang skill atau project-nya? 😊";
   }
 }

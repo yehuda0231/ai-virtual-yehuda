@@ -87,7 +87,7 @@ export default function Footer() {
                 { name: "Proyek", href: "/projects" },
                 { name: "AI Assistant", href: "/ai" },
                 { name: "Pendidikan", href: "/education" },
-                { name: "kontak", href: "/contact" },
+                { name: "Pengalaman", href: "/pengalaman" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link

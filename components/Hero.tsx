@@ -66,10 +66,10 @@ export default function Hero() {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 relative z-30 mb-12">
             <Link
-              href="/projects"
+              href="/pengalaman"
               className="group px-8 py-4 rounded-xl bg-cyan-500 text-black font-black transition-all duration-300 hover:bg-cyan-400 active:scale-95 text-center flex items-center justify-center gap-3 shadow-[0_0_25px_rgba(6,182,212,0.4)]"
             >
-              Lihat Proyek <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              Telusuri Jejak <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             
             <a

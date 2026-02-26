@@ -23,8 +23,8 @@ export default function Navbar() {
     { name: "Project", href: "/projects", icon: <LayoutGrid size={14} /> },
     { name: "Sertifikat", href: "/certificates", icon: <Award size={14} /> },
     { name: "AI Assistant", href: "/ai", icon: <Cpu size={14} />, special: true },
+    { name: "Pengalaman", href: "/pengalaman", icon: <Mail size={14} /> },
     { name: "Pendidikan", href: "/education", icon: <GraduationCap size={14} /> },
-    { name: "Kontak", href: "/contact", icon: <Mail size={14} /> },
   ];
 
   return (
