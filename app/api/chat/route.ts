@@ -6,6 +6,7 @@ type Intent =
   | "experience"
   | "education"
   | "certification"
+  | "aidanml"
   | "career"
   | "contact"
   | "greeting"
@@ -33,11 +34,12 @@ function detectIntent(message = "", intent?: string): Intent {
   if (q.match(/makna hidup|filosofi|kenapa|tujuan dunia/)) return "philosophical";
 
   // Yehuda Related
-  if (q.match(/siapa|nama|tentang kamu|profil|dirimu|identitas/)) return "identity";
-  if (q.match(/skill|keahlian|teknologi|bisa apa|bahasa pemrograman/)) return "skills";
+  if (q.match(/siapa|nama|tentang kamu|profil|portofolio yehuda|dirimu|identitas|berikan data yehuda|berikan datanya|datanya/)) return "identity";
+  if (q.match(/skill|keahlian|teknologi|bisa apa|bahasa pemrograman|jelaskan teknis yehuda/)) return "skills";
   if (q.match(/pengalaman|kerja|magang|project|proyek/)) return "experience";
+  if (q.match(/apa itu ai|ai apa|jelaskan ai|kecerdasan buatan apa|ai|gak tau ai/)) return "aidanml";
   if (q.match(/pendidikan|kuliah|sekolah|lulusan/)) return "education";
-  if (q.match(/sertifikat|prestasi|kompetisi|juara/)) return "certification";
+  if (q.match(/sertifikat|prestasi|kompetisi|juara|pernah juara|gak tau pernah juara/)) return "certification";
   if (q.match(/tujuan|karier|cita-cita|masa depan/)) return "career";
   if (q.match(/kontak|email|linkedin|hubungi|social media|sosmed/)) return "contact";
 
@@ -116,6 +118,9 @@ function generateReply(intent: Intent): string {
 
     case "random":
       return getRand(responseBank.random);
+
+    case "aidanml":
+      return 'Kecerdasan Buatan adalah simfoni antara logika manusia dan presisi mesin. Bagi yehuda, setiap algoritma adalah langkah untuk melampaui batas imajinasi dan menciptakan teknologi yang mampu memahami dunia.';
 
     case "identity":
       return `Yehuda Putra Yura adalah mahasiswa D4 Teknik Informatika di Politeknik Negeri Manado.
