@@ -123,9 +123,7 @@ function generateReply(intent: Intent): string {
       return 'Artificial Intelligence atau AI adalah kecerdasan Buatan yaitu simfoni antara logika manusia dan presisi mesin. Bagi yehuda, setiap algoritma adalah langkah untuk melampaui batas imajinasi dan menciptakan teknologi yang mampu memahami dunia.';
 
     case "identity":
-      return `Yehuda Putra Yura adalah mahasiswa D4 Teknik Informatika di Politeknik Negeri Manado.
-
-Ia sangat antusias dalam bidang Artificial Intelligence (AI), khususnya Machine Learning dan Computer Vision. Uniknya, Yehuda juga jago mengintegrasikan model cerdas tersebut ke dalam ekosistem web modern.`;
+      return `Yehuda Putra Yura adalah mahasiswa D4 Teknik Informatika di Politeknik Negeri Manado. Ia sangat antusias dalam bidang Artificial Intelligence (AI), khususnya Machine Learning dan Computer Vision. Uniknya, Yehuda juga jago mengintegrasikan model cerdas tersebut ke dalam ekosistem web modern.`;
 
     case "education":
       return `🎓 **Riwayat Pendidikan**
@@ -136,7 +134,7 @@ Ia sangat antusias dalam bidang Artificial Intelligence (AI), khususnya Machine 
 Ia membangun pondasi IT yang kuat sejak bangku sekolah menengah!`;
 
     case "skills":
-      return `🧠 **Spesialisasi Teknologi**
+      return `🧠 **Skill & Teknologi**
 
 🔹 **AI Core**: Python, Machine Learning, Computer Vision, Data Analysis.
 🔹 **Development**: HTML/CSS, JavaScript, PHP, FastAPI.
@@ -144,6 +142,7 @@ Ia membangun pondasi IT yang kuat sejak bangku sekolah menengah!`;
 
     case "experience":
       return `🛠️ **Jejak Pengalaman**
+      
 • **Home Credit Indonesia** (2026): Data Scientist (Virtual Internship). Mengolah ±300.000 data nasabah dengan model Random Forest & Logistic Regression (ROC AUC > 0.7).
 • **Kominfo Manado** (2022): Magang IT Support Selama 3 Bulan Sebagai IT Staf dalam Pemeliharaan Sistem Dan Sebagai Tim Multimedia Di Pemerintah Kota Manado .
 • **AI Projects**: Mengembangkan Face Recognition & AI Assistant personal.

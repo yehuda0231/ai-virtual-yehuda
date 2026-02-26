@@ -93,7 +93,7 @@ export default function AIAssistant() {
   }
 
   return (
-    <section className="w-full max-w-2xl mx-auto px-4 py-4 flex flex-col h-[calc(100dvh-100px)] sm:h-[80vh] relative">
+    <section className="w-full max-w-4xl mx-auto px-4 py-4 flex flex-col h-[calc(100dvh-100px)] sm:h-[85vh] transition-all duration-300 relative">
       
       {/* --- BG GLOW (Ringkas) --- */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -122,7 +122,7 @@ export default function AIAssistant() {
         {/* ===== CHAT BODY ===== */}
         <main 
           ref={scrollContainerRef}
-          className="flex-1 overflow-y-auto px-4 py-6 space-y-6 no-scrollbar overscroll-contain"
+          className="flex-1 overflow-y-auto px-4 py-6 space-y-6 custom-scrollbar overscroll-contain"
         >
           {messages.map((m, i) => (
             <div key={i} className={`flex items-start gap-3 ${m.role === "user" ? "flex-row-reverse" : ""}`}>
@@ -135,7 +135,17 @@ export default function AIAssistant() {
                 ${m.role === "assistant" 
                   ? "bg-zinc-800/50 text-zinc-200 rounded-tl-none border border-white/5 shadow-sm" 
                   : "bg-blue-600 text-white rounded-tr-none shadow-md"}`}>
-                {m.content}
+                <div className="whitespace-pre-wrap">
+  {m.content.split(/(\*\*.*?\*\*)/g).map((part, index) => 
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={index} className="font-black text-white shadow-sm">
+        {part.replace(/\*\*/g, "")}
+      </strong>
+    ) : (
+      part
+    )
+  )}
+</div>
               </div>
             </div>
           ))}
@@ -202,14 +212,29 @@ export default function AIAssistant() {
       </div>
 
       <style jsx global>{`
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* Mencegah zooming otomatis saat input fokus di iPhone */
-        @media screen and (max-width: 768px) {
-          input { font-size: 16px !important; }
-        }
-      `}</style>
+  /* Membuat scrollbar tetap ada tapi tipis dan modern di desktop */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(6, 182, 212, 0.5); /* Warna cyan saat hover */
+  }
+
+  /* Tetap sembunyikan scrollbar default jika kamu mau, tapi pastikan fungsi scroll aktif */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
+  @media screen and (max-width: 768px) {
+    input { font-size: 16px !important; }
+  }
+`}</style>
     </section>
   );
 }
