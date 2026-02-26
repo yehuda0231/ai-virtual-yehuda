@@ -120,7 +120,7 @@ function generateReply(intent: Intent): string {
       return getRand(responseBank.random);
 
     case "aidanml":
-      return 'Kecerdasan Buatan adalah simfoni antara logika manusia dan presisi mesin. Bagi yehuda, setiap algoritma adalah langkah untuk melampaui batas imajinasi dan menciptakan teknologi yang mampu memahami dunia.';
+      return 'Artificial Intelligence atau AI adalah kecerdasan Buatan yaitu simfoni antara logika manusia dan presisi mesin. Bagi yehuda, setiap algoritma adalah langkah untuk melampaui batas imajinasi dan menciptakan teknologi yang mampu memahami dunia.';
 
     case "identity":
       return `Yehuda Putra Yura adalah mahasiswa D4 Teknik Informatika di Politeknik Negeri Manado.
