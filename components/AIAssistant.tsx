@@ -236,5 +236,6 @@ export default function AIAssistant() {
   }
 `}</style>
     </section>
+    
   );
 }
