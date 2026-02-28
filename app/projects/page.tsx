@@ -22,14 +22,14 @@ export default function ProjectsPage() {
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-7xl font-black text-white tracking-tighter leading-[1.1] mb-6">
+          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mb-6">
             Selected <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
               Projects
             </span>
           </h1>
           
-          <p className="text-gray-400 text-base md:text-xl leading-relaxed max-w-2xl font-light">
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl font-light">
             Eksplorasi mendalam dalam membangun sistem cerdas, 
             pengolahan data masif, dan solusi <span className="text-white font-medium">Full-stack AI</span> yang adaptif.
           </p>

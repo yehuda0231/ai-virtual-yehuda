@@ -25,7 +25,7 @@ export default function CertificatesPage() {
           <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter leading-none">
             Sertifikat <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
-              & Pembelajaran
+              Pembelajaran
             </span>
           </h1>
           
