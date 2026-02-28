@@ -123,7 +123,7 @@ export default function Footer() {
                 },
                 { 
                     icon: <Github size={22} />, 
-                    href: "https://github.com",
+                    href: "https://github.com/yehuda0231",
                     color: "hover:text-white"
                 }
               ].map((social, i) => (
