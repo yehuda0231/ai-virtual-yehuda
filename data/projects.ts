@@ -7,9 +7,15 @@ export default [
     },
     {
       title: "Home Credit Risk Analysis",
-      desc: "Mengembangkan model machine learning prediktif untuk mengukur risiko gagal bayar nasabah menggunakan dataset Home Credit mempercepat pengambilan keputusan berbasis data secara real-time",
+      desc: "Final Project dalam program Data Science Rakamin dengan studi kasus Home Credit Indonesia, berfokus pada analisis data dan pengembangan model machine learning prediktif untuk mengukur risiko gagal bayar.",
       image: "/projects/project2.png",
       github: "https://github.com/yehuda0231/home-credit-risk-analysis.git"
+    },
+    {
+      title: "Ecommerce Sales Dashboard - Power BI",
+      desc: "Dasbor Power BI interaktif yang menganalisis kinerja penjualan, margin keuntungan, dan kontribusi pelanggan untuk mendukung pengambilan keputusan bisnis berbasis data.",
+      image: "/projects/overview.png",
+      github: "https://github.com/yehuda0231/ecommerce-sales-dashboard-powerbi"
     },
     {
       title: "Robot IOT",
