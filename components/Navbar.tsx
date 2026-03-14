@@ -55,7 +55,7 @@ export default function Navbar() {
             </span>
             <div className="flex items-center gap-1.5">
               <span className="h-1 w-1 rounded-full bg-cyan-500 animate-pulse" />
-              <span className="text-[9px] text-cyan-500/70 font-mono tracking-[0.2em] uppercase font-bold">AI Engineer</span>
+              <span className="text-[9px] text-cyan-500/70 font-mono tracking-[0.2em] uppercase font-bold">AI </span>
             </div>
           </div>
         </Link>

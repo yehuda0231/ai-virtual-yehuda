@@ -31,7 +31,7 @@ export default function ProjectsPage() {
           
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl font-light">
             Eksplorasi mendalam dalam membangun sistem cerdas, 
-            pengolahan data masif, dan solusi <span className="text-white font-medium">Full-stack AI</span> yang adaptif.
+            pengolahan data masif, dan solusi <span className="text-white font-medium">AI & BIG DATA</span> yang adaptif.
           </p>
         </div>
 
