@@ -1,6 +1,11 @@
 export default [
 
     {
+      image: "/certificates/cert9.jpg",
+      title: "AI Praktis untuk Produktivitas – Dicoding 2026 | Yehuda Putra Yura",
+      desc: "Berhasil menyelesaikan pelatihan AI Praktis untuk Produktivitas, dengan kompetensi dalam penerapan AI untuk otomatisasi workflow, peningkatan efisiensi kerja, dan optimalisasi penggunaan tools berbasis kecerdasan buatan."
+    },
+    {
       image: "/certificates/cert8.png",
       title: "Data Scientist - Credit Risk Modeling (Project Base Intership) Home Credit Indonesia x Rakamin Academy 2026 – Yehuda Yura",
       desc: "Mengembangkan model prediksi risiko kredit end-to-end menggunakan 300.000+ data nasabah"
@@ -28,7 +33,7 @@ export default [
     {
       image: "/certificates/cert7.png",
       title: "Dinas Komunikasi dan Informatika Kota Manado – Yehuda Yura",
-      desc: "Magang di Dinas Kominfo Manado selama 3 bulan (Maret–Mei) saat masih bersekolah di SMK Prisma Pioneer Manado Berperan sebagai staf IT, membantu instalasi dan pemeliharaan sistem."
+      desc: "Magang di Dinas Kominfo Manado selama 3 bulan (Maret–Mei 2022) sebagai staf IT, membantu instalasi dan pemeliharaan sistem."
     },
 
     {
