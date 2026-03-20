@@ -2,8 +2,8 @@ export default [
 
     {
       image: "/certificates/cert9.jpg",
-      title: "AI Praktis untuk Produktivitas – Dicoding 2026 | Yehuda Putra Yura",
-      desc: "Berhasil menyelesaikan pelatihan AI Praktis untuk Produktivitas, dengan kompetensi dalam penerapan AI untuk otomatisasi workflow, peningkatan efisiensi kerja, dan optimalisasi penggunaan tools berbasis kecerdasan buatan."
+      title: "Pengembangan Aplikasi Generative AI dengan Microsoft Azure – Dicoding 2026 | Yehuda Putra Yura",
+      desc: "Berhasil menyelesaikan pelatihan Membangun Aplikasi Generative AI dengan Microsoft Azure."
     },
     {
       image: "/certificates/cert8.png",
@@ -33,7 +33,7 @@ export default [
     {
       image: "/certificates/cert7.png",
       title: "Dinas Komunikasi dan Informatika Kota Manado – Yehuda Yura",
-      desc: "Magang di Dinas Kominfo Manado selama 3 bulan (Maret–Mei 2022) sebagai staf IT, membantu instalasi dan pemeliharaan sistem."
+      desc: "Magang di Dinas Kominfo Manado selama 3 bulan (Maret–Mei 2022) sebagai staf IT, membantu instalasi sistem."
     },
 
     {
