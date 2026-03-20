@@ -155,6 +155,7 @@ Ia membangun pondasi IT yang kuat sejak bangku sekolah menengah!`;
 🏆 **Juara 2 Coding Robotic IoT** – GMIM (2025).
 📜 **BNSP** Junior Web Developer.
 📜 **Cisco**: PCAP Python.
+📜 **Dicoding**: Membangun Aplikasi Generative AI dengan Microsoft Azure.
 📜 **Komdigi**: Big Data Using Python.
 📜 **AI Singapore**: AWS Regional LLM League.`;
 
