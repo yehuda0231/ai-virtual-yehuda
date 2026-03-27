@@ -150,7 +150,7 @@ Ia membangun pondasi IT yang kuat sejak bangku sekolah menengah!`;
 
     case "certification":
       return `📜 **Pencapaian & Lisensi**
-
+📜 **Microsoft Certified: Azure AI Engineer Associate - Score: 862. 
 📜 **Home Credit x Rakamin**: Data Scientist (Predikat: Excellent - 89.3/100).      
 🏆 **Juara 2 Coding Robotic IoT** – GMIM (2025).
 📜 **BNSP** Junior Web Developer.

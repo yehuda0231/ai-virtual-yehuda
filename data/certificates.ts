@@ -1,14 +1,20 @@
 export default [
 
     {
-      image: "/certificates/cert9.jpg",
-      title: "Pengembangan Aplikasi Generative AI dengan Microsoft Azure – Dicoding 2026 | Yehuda Putra Yura",
-      desc: "Berhasil menyelesaikan pelatihan Membangun Aplikasi Generative AI dengan Microsoft Azure."
+      image: "/certificates/cert10.jpeg",
+      title: "Microsoft Certified: Azure AI Engineer Associate 2026 – Yehuda Yura",
+      desc: "Mengembangkan dan mengimplementasikan solusi Artificial Intelligence mencakup machine learning, NLP, dan computer vision"
     },
+
     {
       image: "/certificates/cert8.png",
       title: "Data Scientist - Credit Risk Modeling (Project Base Intership) Home Credit Indonesia x Rakamin Academy 2026 – Yehuda Yura",
       desc: "Mengembangkan model prediksi risiko kredit end-to-end menggunakan 300.000+ data nasabah"
+    },
+    {
+      image: "/certificates/cert9.jpg",
+      title: "Pengembangan Aplikasi Generative AI dengan Microsoft Azure – Dicoding 2026 | Yehuda Putra Yura",
+      desc: "Berhasil menyelesaikan pelatihan Membangun Aplikasi Generative AI dengan Microsoft Azure."
     },
     {
       image: "/certificates/cert5.png",
