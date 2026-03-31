@@ -163,7 +163,7 @@ Ia membangun pondasi IT yang kuat sejak bangku sekolah menengah!`;
       return `📬 **Jalur Komunikasi**
 
 📧 Email: yehuda.ai.bot@gmail.com
-🔗 LinkedIn: https://linkedin.com/in/yehuda-yura-a0694b25
+🔗 LinkedIn: https://www.linkedin.com/in/yehuda-yura-a0694b2b5
 📍 Lokasi: Manado, Indonesia.`;
 
     default:
