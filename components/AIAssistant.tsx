@@ -44,6 +44,7 @@ export default function AIAssistant() {
     }
   }, [messages.length, typing, scrollToBottom]);
 
+  
   async function sendMessage(payload: { message: string; intent?: string }) {
     if (typing || !payload.message.trim()) return;
 
@@ -87,8 +88,12 @@ export default function AIAssistant() {
       if (index >= text.length) {
         clearInterval(interval);
         setTyping(false);
+      
+       // speak(text); // 🔥 INI YANG BIKIN DIA NGOMONG
+      
         setTimeout(() => scrollToBottom("smooth"), 100);
       }
+      
     }, 20); // Sedikit diperlambat ke 20ms (60fps friendly) agar CPU iPhone tidak overheat
   }
 
@@ -116,7 +121,12 @@ export default function AIAssistant() {
               </div>
             </div>
           </div>
-          <Sparkles size={16} className="text-zinc-600" />
+          <div className="flex items-center gap-3">
+
+
+  <Sparkles size={16} className="text-zinc-600" />
+</div>
+
         </header>
 
         {/* ===== CHAT BODY ===== */}
@@ -132,10 +142,12 @@ export default function AIAssistant() {
               </div>
 
               <div className={`relative px-4 py-2.5 rounded-2xl text-[13px] leading-relaxed max-w-[85%] 
-                ${m.role === "assistant" 
-                  ? "bg-zinc-800/50 text-zinc-200 rounded-tl-none border border-white/5 shadow-sm" 
-                  : "bg-blue-600 text-white rounded-tr-none shadow-md"}`}>
-                <div className="whitespace-pre-wrap">
+  ${m.role === "assistant" 
+    ? "bg-zinc-800/50 text-zinc-200 rounded-tl-none border border-white/5 shadow-sm" 
+    : "bg-blue-600 text-white rounded-tr-none shadow-md"}`}>
+
+  <div className="whitespace-pre-wrap">
+
   {m.content.split(/(\*\*.*?\*\*)/g).map((part, index) => 
     part.startsWith("**") && part.endsWith("**") ? (
       <strong key={index} className="font-black text-white shadow-sm">

@@ -1,8 +1,8 @@
 export default [
 
     {
-      image: "/certificates/cert10.jpeg",
-      title: "Microsoft Certified: Azure AI Engineer Associate 2026 – Yehuda Yura",
+      image: "/certificates/cert10.png",
+      title: "Microsoft Certified: Azure AI Engineer Associate 2026 – Yehuda Puta Yura",
       desc: "Mengembangkan dan mengimplementasikan solusi Artificial Intelligence mencakup machine learning, NLP, dan computer vision"
     },
 
